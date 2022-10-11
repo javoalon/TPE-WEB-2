@@ -12,11 +12,11 @@
 <body>
     <header>
         <nav class="navbar navbar-light bg-primary">
-            <a class="navbar-brand" href="">
+            <a class="navbar-brand" href="jugadores">
             <img src="images/NBAlogo.png" width="65" height="30" class="d-inline-block align-top" alt="">
                 Jugadores
             </a>
-            <a class="navbar-brand" href="">
+            <a class="navbar-brand" href="equipos">
                 Equipos
             </a>
     </nav>

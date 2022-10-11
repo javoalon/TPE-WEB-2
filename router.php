@@ -1,5 +1,6 @@
 <?php
 require_once 'app/controllers/player.controller.php';
+require_once 'app/controllers/team.controller.php';
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 $action = 'jugadores';
 if (!empty($_GET['action'])) {
@@ -24,6 +25,10 @@ switch ($params[0]) {
         $playerController = new PlayerController();
         $id = $params[1];
         $playerController->editPlayer($id);
+        break;
+    case 'equipos':
+        $teamController = new TeamController();
+        $teamController->showTeams();
         break;
     default:
         echo "404 not found";
