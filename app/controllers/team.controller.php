@@ -14,4 +14,8 @@ class TeamController{
         $teams = $this->model->getAllTeams();
         $this->view->showTeams($teams);
     }
+    public function showOneTeam($team){
+        $teams = $this->model->getOneTeamPlayers($team);
+        $this->view->showOneTeamPlayers($teams);
+    }
 }

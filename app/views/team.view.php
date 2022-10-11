@@ -9,4 +9,8 @@ class TeamView{
         $this->smarty->assign('teams',$teams);
         $this->smarty->display('teamsList.tpl');
     }
+    function showOneTeamPlayers($team){
+        $this->smarty->assign('team',$team);
+        $this->smarty->display('oneTeam.tpl');
+    }
 }
