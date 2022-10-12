@@ -35,4 +35,8 @@ class PlayerController{
         $this->model->editPlayer($nombre,$posicion,$equipo,$numero,$id);
         header("Location: " . BASE_URL);
     }
+    function orderBy($filtro){
+        $jugadoresOrdenados = $this->model->orderBy($filtro);
+        $this->view->showPlayers($jugadoresOrdenados);
+    }
 }

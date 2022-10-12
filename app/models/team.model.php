@@ -17,4 +17,16 @@ class TeamModel{
         $teamPlayers = $query->fetchAll(PDO::FETCH_OBJ);
         return $teamPlayers;
     }
+    public function addTeam($team){
+        $query = $this->db->prepare("INSERT INTO equipo(equipo) VALUES (?)");
+        $query->execute([$team]);
+    }
+    public function deleteTeam($id){
+        $query = $this->db->prepare('DELETE FROM equipo WHERE id= ?');
+        $query->execute([$id]);
+    }
+    public function editTeam($team,$id){
+        $query = $this->db->prepare('UPDATE equipo(equipo) SET (?) WHERE id = ?');
+        $query->execute([$id,$team]);
+    }
 }

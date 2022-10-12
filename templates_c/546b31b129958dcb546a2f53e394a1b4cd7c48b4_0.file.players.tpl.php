@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-11 05:05:15
+/* Smarty version 4.2.1, created on 2022-10-12 18:39:15
   from 'C:\xampp\htdocs\WEB2\TPE1\templates\players.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6344dd6b87b995_63171968',
+  'unifunc' => 'content_6346edb3b89331_57521728',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '546b31b129958dcb546a2f53e394a1b4cd7c48b4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB2\\TPE1\\templates\\players.tpl',
-      1 => 1665457513,
+      1 => 1665592748,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:form_add.tpl' => 1,
   ),
 ),false)) {
-function content_6344dd6b87b995_63171968 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6346edb3b89331_57521728 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:form_add.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -30,10 +30,18 @@ $_smarty_tpl->_subTemplateRender("file:form_add.tpl", $_smarty_tpl->cache_id, $_
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Posicion</th>
-                <th scope="col">Equipo</th>
-                <th scope="col">Numero</th>
+                <th scope="col"><a href="orderby/nombre">Nombre<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+              </svg></a></th>
+                <th scope="col"><a href="orderby/posicion">Posicion<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+              </svg></a></th>
+                <th scope="col"><a href="orderby/equipo">Equipo<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+              </svg></a></th>
+                <th scope="col"><a href="orderby/numero">Numero<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+              </svg></a></th>
             </tr>
         </thead>
         <tbody>

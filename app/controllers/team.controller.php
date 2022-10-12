@@ -18,4 +18,18 @@ class TeamController{
         $teams = $this->model->getOneTeamPlayers($team);
         $this->view->showOneTeamPlayers($teams);
     }
+    function addTeam(){
+        $newTeam = $_POST['newTeam'];
+        $this->model->addTeam($newTeam);
+        header("Location: http://localhost/WEB2/TPE1/equipos");
+    }
+    function deleteTeam($id){
+        $this->model->deleteTeam($id);
+        header("Location: http://localhost/WEB2/TPE1/equipos");
+    }
+    function editTeam($id){
+        $team = $_POST['newTeam'];
+        $this->model->editTeam($team,$id);
+        header("Location: http://localhost/WEB2/TPE1/equipos");
+    }
 }

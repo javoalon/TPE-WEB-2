@@ -35,6 +35,25 @@ switch ($params[0]) {
         $team = $params[1];
         $teamController->showOneTeam($team);
         break;
+    case 'orderby':
+        $playerController = new PlayerController();
+        $filtro = $params[1];
+        $playerController->orderBy($filtro);
+        break;
+    case 'addTeam':
+        $teamController = new TeamController();
+        $teamController->addTeam();
+        break;
+    case 'deleteTeam':
+        $teamController = new TeamController();
+        $id = $params[1];
+        $teamController->deleteTeam($id);
+        break;
+    case 'editTeam':
+        $teamController = new TeamController();
+        $id = $params[1];
+        $teamController->editTeam($id);
+        break;
     default:
         echo "404 not found";
         break;
