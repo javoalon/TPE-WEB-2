@@ -24,7 +24,7 @@ class TeamModel{
         $query->execute([$id]);
     }
     public function editTeam($team,$id){
-        $query = $this->db->prepare('UPDATE equipo(equipo) SET (?) WHERE id = ?');
-        $query->execute([$id,$team]);
+        $query = $this->db->prepare('UPDATE equipo SET equipo=? WHERE id = ?');
+        $query->execute([$team,$id]);
     }
 }

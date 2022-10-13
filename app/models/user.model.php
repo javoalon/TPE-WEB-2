@@ -10,4 +10,9 @@ class UserModel{
         $query->execute([$email]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
+    public function itsAdmin($email){
+        $query = $this->db->prepare("SELECT rol FROM usuario where email = ?");
+        $query->execute([$email]);
+        return $query->fetch(PDO::FETCH_OBJ);
+    }
 }

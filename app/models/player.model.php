@@ -27,9 +27,8 @@ class PlayerModel
     }
     public function editPlayer($nombre, $posicion, $equipo, $numero, $id)
     {
-        $query = $this->db->prepare('UPDATE jugador (nombre, posicion, id_equipo_fk, numero) SET (?, ?, ?, ?) WHERE id_pk = ?');
+        $query = $this->db->prepare('UPDATE jugador SET nombre = ?,posicion=?, id_equipo_fk=?, numero=? WHERE id_pk = ?');
         $query->execute([$nombre, $posicion, $equipo, $numero, $id]);
-        $query->fetch(PDO::FETCH_OBJ);
     }
     public function orderBy($filtro)
     {

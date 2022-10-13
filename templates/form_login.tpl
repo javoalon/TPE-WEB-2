@@ -3,7 +3,7 @@
     <form method="POST" action="validate">
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" required class="form-control" id="email" name="email" aria-describedby="emailHelp">
+            <input type="email" required class="form-control" id="email" name="email" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
             <label for="password">Contraseña</label>

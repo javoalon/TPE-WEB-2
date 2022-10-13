@@ -1,5 +1,5 @@
 <?php
-
+require_once 'app/models/user.model.php';
 class LoginHelper {
     public function checkLoggedIn() {
         session_start();
@@ -7,5 +7,13 @@ class LoginHelper {
             header("Location: " . BASE_URL . 'login');
             die();
         }
-    } 
+    }
+    public function checkAdmin(){
+        $this->model = new UserModel();
+        $user = $this->model->itsAdmin($_SESSION['USER_EMAIL']);
+        if(($user->rol)!="Admin"){
+            header("Location: " . BASE_URL . 'jugadores');
+            die();
+        }
+    }
 }

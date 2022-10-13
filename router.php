@@ -22,6 +22,11 @@ switch ($params[0]) {
         $id = $params[1];
         $playerController->deletePlayer($id);
         break;
+    case 'editPlayer':
+        $playerController = new PlayerController();
+        $id = $params[1];
+        $playerController->showPlayerToEdit($id);
+        break;
     case 'edit':
         $playerController = new PlayerController();
         $id = $params[1];
@@ -50,6 +55,11 @@ switch ($params[0]) {
         $id = $params[1];
         $teamController->deleteTeam($id);
         break;
+    case 'formEditTeam':
+        $teamController = new TeamController();
+        $id = $params[1];
+        $teamController->showFormEditTeam($id);
+        break;
     case 'editTeam':
         $teamController = new TeamController();
         $id = $params[1];
@@ -67,7 +77,6 @@ switch ($params[0]) {
         $loginController = new LoginController();
         $loginController->validateUser();
         break;
-
     default:
         echo "404 not found";
         break;
