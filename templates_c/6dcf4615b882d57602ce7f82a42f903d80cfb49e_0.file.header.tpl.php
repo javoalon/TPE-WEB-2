@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-11 05:51:27
+/* Smarty version 4.2.1, created on 2022-10-13 03:49:33
   from 'C:\xampp\htdocs\WEB2\TPE1\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6344e83f4c4a69_06009057',
+  'unifunc' => 'content_63476ead618132_97315469',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6dcf4615b882d57602ce7f82a42f903d80cfb49e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB2\\TPE1\\templates\\header.tpl',
-      1 => 1665459497,
+      1 => 1665625760,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6344e83f4c4a69_06009057 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63476ead618132_97315469 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +43,12 @@ function content_6344e83f4c4a69_06009057 (Smarty_Internal_Template $_smarty_tpl)
             <a class="navbar-brand" href="equipos">
                 Equipos
             </a>
-    </nav>
+            <?php if (!(isset($_SESSION['IS_LOGGED']))) {?>
+                <a class="navbar-brand" href="login">Login</a>
+            <?php } else { ?>
+                <a class="navbar-brand" href="logout">Logout</a>
+            <?php }?>
+        </nav>
     </header>
     <main><?php }
 }

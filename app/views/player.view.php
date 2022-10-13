@@ -5,8 +5,9 @@ class PlayerView{
     public function __construct(){
         $this->smarty = new Smarty();
     }
-    function showPlayers($players){
+    function showPlayers($players,$teams){
         $this->smarty->assign('players',$players);
+        $this->smarty->assign('teams',$teams);
         $this->smarty->display('players.tpl');
     }
 }

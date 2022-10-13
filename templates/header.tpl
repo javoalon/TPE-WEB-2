@@ -19,6 +19,11 @@
             <a class="navbar-brand" href="equipos">
                 Equipos
             </a>
-    </nav>
+            {if !isset($smarty.session.IS_LOGGED)}
+                <a class="navbar-brand" href="login">Login</a>
+            {else}
+                <a class="navbar-brand" href="logout">Logout</a>
+            {/if}
+        </nav>
     </header>
     <main>

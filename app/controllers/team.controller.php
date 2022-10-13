@@ -1,6 +1,7 @@
 <?php
 require_once 'app/views/team.view.php';
 require_once 'app/models/team.model.php';
+require_once 'app/helpers/login.helper.php';
 
 class TeamController{
     private $model;
@@ -9,6 +10,8 @@ class TeamController{
     public function __construct(){
         $this->model = new TeamModel();
         $this->view = new TeamView();
+        $loginHelper = new LoginHelper();
+        $loginHelper->checkLoggedIn();
     }
     public function showTeams(){
         $teams = $this->model->getAllTeams();
@@ -21,11 +24,11 @@ class TeamController{
     function addTeam(){
         $newTeam = $_POST['newTeam'];
         $this->model->addTeam($newTeam);
-        header("Location: http://localhost/WEB2/TPE1/equipos");
+        header("Location: " . BASE_URL . "/equipos");
     }
     function deleteTeam($id){
         $this->model->deleteTeam($id);
-        header("Location: http://localhost/WEB2/TPE1/equipos");
+        header("Location: " . BASE_URL . "/equipos");
     }
     function editTeam($id){
         $team = $_POST['newTeam'];

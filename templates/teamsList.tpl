@@ -1,5 +1,7 @@
 {include file="header.tpl"}
+<br>
 {include file="form_add_team.tpl"}
+<br>
 <div class="flex-container">
     {foreach from=$teams item=$team}
         <div>
