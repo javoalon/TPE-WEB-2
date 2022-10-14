@@ -10,4 +10,8 @@ class LoginView{
         $this->smarty->assign('error',$error);
         $this->smarty->display('form_login.tpl');
     }
+    function showFormEditPw($error=null){
+        $this->smarty->assign('error',$error);
+        $this->smarty->display('form_edit_cuenta.tpl');
+    }
 }

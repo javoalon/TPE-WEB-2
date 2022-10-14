@@ -37,4 +37,29 @@ class LoginController{
         session_destroy();
         header("Location: " . BASE_URL);
     }
+    public function showFormEditPw(){
+        $this->view->showFormEditPw();
+    }
+    public function changePassword(){
+        $email = $_POST['emailEditPw'];
+        if($email==$_SESSION['USER_EMAIL']){ //verificar que sea la misma cuenta que esta activa con la que se quiere cambiar la pw
+            $user = $this->model->getUserbyEmail($email);
+            $oldPassword = $_POST['editPassword'];
+            $newPassword = $_POST['editNewPassword'];
+            if(password_verify($oldPassword,($user->password))){
+                $this->model->changePassword($email,$newPassword);
+                header("Location: " . BASE_URL);
+            }else{
+                $this->view->showFormEditPw("La contraseña actual no es la misma");
+            }
+        } else{
+            $this->view->showFormEditPw("Ese no es el email de esta cuenta...");
+        }
+    }
+    public function deleteUser(){
+        $user = $this->model->getUserbyEmail($_SESSION['USER_EMAIL']);
+        $this->model->deleteUser($user->id);
+        session_destroy();
+        header("Location: " . BASE_URL);
+    }
 }

@@ -2,6 +2,7 @@
 require_once 'app/controllers/player.controller.php';
 require_once 'app/controllers/team.controller.php';
 require_once 'app/controllers/login.controller.php';
+require_once 'app/controllers/register.controller.php';
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 $action = 'jugadores';
 if (!empty($_GET['action'])) {
@@ -76,6 +77,26 @@ switch ($params[0]) {
     case 'validate':
         $loginController = new LoginController();
         $loginController->validateUser();
+        break;
+    case 'register':
+        $registerController = new RegisterController();
+        $registerController->showFormRegister();
+        break;
+    case 'registerUser':
+        $registerController = new RegisterController();
+        $registerController->addNewUser();
+        break;
+    case 'config':
+        $loginController = new LoginController();
+        $loginController->showFormEditPw();
+        break;
+    case 'cambiarPassword':
+        $loginController = new LoginController();
+        $loginController->changePassword();
+        break;
+    case 'deleteUser':
+        $loginController = new LoginController();
+        $loginController->deleteUser();
         break;
     default:
         echo "404 not found";

@@ -9,4 +9,18 @@ class UserModel{
         $query->execute([$email]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
+    public function newUser($newEmail,$newPassword){
+        $password = password_hash($newPassword, PASSWORD_DEFAULT);
+        $query = $this->db->prepare("INSERT INTO usuario (email, `password`) VALUES (?,?)");
+        $query->execute([$newEmail,$password]);
+    }
+    public function changePassword($email, $newPassword){
+        $password = password_hash($newPassword,PASSWORD_DEFAULT);
+        $query = $this->db->prepare('UPDATE usuario SET `password`=? WHERE email = ?');
+        $query->execute([$password,$email]);
+    }
+    public function deleteUser($user){
+        $query = $this->db->prepare('DELETE FROM usuario WHERE id = ?');
+        $query->execute([$user]);
+    }
 }

@@ -10,6 +10,7 @@
             <input type="password" required class="form-control" id="password" name="password">
         </div>
         <button type="submit" class="btn btn-primary mt-3">Entrar</button>
+        <button type="submit" class="btn btn-primary mt-3"><a href="register" style="color: white;">Registrarse</a></button>
         {if $error} 
             <div class="alert alert-danger mt-3">
                 {$error}
