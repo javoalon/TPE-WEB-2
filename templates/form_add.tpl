@@ -1,9 +1,10 @@
 <!-- Agregar jugador a la lista -->
-{if ($user->rol)=="Admin"} <!--Si en la base de datos, el rol no es = a "Admin" no muestra el formulario para agregar-->
+{if ($smarty.session.IS_LOGGED)==true} <!--Si la session es iniciada, va a imprimir el formulario-->
     <form class="w-50 p-3" action="add" method="POST">
         <div class="form-group">
             <label for="exampleFormControlInput1">Nombre</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" required placeholder="Kobe Bryant">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" required
+                placeholder="Kobe Bryant">
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Posicion</label>

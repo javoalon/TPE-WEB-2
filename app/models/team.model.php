@@ -20,6 +20,8 @@ class TeamModel{
         $query->execute([$team]);
     }
     public function deleteTeam($id){
+        $query = $this->db->prepare('DELETE FROM jugador WHERE id_equipo_fk= ?'); //para borrar un equipo, primero hay que borrar a los jugadores que esten en el.
+        $query->execute([$id]);
         $query = $this->db->prepare('DELETE FROM equipo WHERE id= ?');
         $query->execute([$id]);
     }

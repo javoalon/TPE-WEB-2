@@ -13,12 +13,11 @@ class TeamController{
         $this->model = new TeamModel();
         $this->view = new TeamView();
         $loginHelper = new LoginHelper();
-        $loginHelper->checkLoggedIn();
+        $loginHelper->checkIsLogged();
     }
     public function showTeams(){
         $teams = $this->model->getAllTeams();
-        $user = $this->userModel->getUserByEmail($_SESSION['USER_EMAIL']);
-        $this->view->showTeams($teams,$user);
+        $this->view->showTeams($teams);
     }
     public function showOneTeam($team){
         $teams = $this->model->getOneTeamPlayers($team);

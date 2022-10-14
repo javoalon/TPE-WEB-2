@@ -1,19 +1,16 @@
 <?php
-require_once 'app/models/user.model.php';
-class LoginHelper {
-    public function checkLoggedIn() {
+class LoginHelper
+{
+    public function checkIsLogged(){
         session_start();
-        if (!isset($_SESSION['IS_LOGGED'])) { //si el usuario no esta logeado, lo devuelve al form de login
-            header("Location: " . BASE_URL . 'login');
-            die();
+        if (!isset($_SESSION['IS_LOGGED'])) {
+            $_SESSION['IS_LOGGED'] = false;
         }
     }
     public function checkAdmin(){
-        $this->model = new UserModel();
-        $user = $this->model->itsAdmin($_SESSION['USER_EMAIL']);
-        if(($user->rol)!="Admin"){
-            header("Location: " . BASE_URL . 'jugadores');
-            die();
+        if (!isset($_SESSION['IS_LOGGED'])||($_SESSION['IS_LOGGED'])==false) {
+            header("Location: " . BASE_URL);
+            die;
         }
     }
 }

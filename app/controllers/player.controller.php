@@ -9,21 +9,20 @@ class PlayerController{
     private $model;
     private $view;
     private $modelTeam;
-    private $modelUser;
+    private $userModel;
 
     public function __construct(){
         $this->userModel = new UserModel();
         $this->model = new PlayerModel();
         $this->view = new PlayerView();
         $loginHelper = new LoginHelper();
-        $loginHelper->checkLoggedIn();
+        $loginHelper->checkIsLogged();
     }
     public function showPlayers(){
         $this->modelTeam = new TeamModel();
         $teams = $this->modelTeam->getAllTeams();
         $jugadores = $this->model->getAllPlayers();
-        $user = $this->userModel->getUserByEmail($_SESSION['USER_EMAIL']);
-        $this->view->showPlayers($jugadores,$teams,$user);
+        $this->view->showPlayers($jugadores,$teams);
     }
     function addPlayer(){
         $loginHelper = new LoginHelper();
@@ -64,7 +63,6 @@ class PlayerController{
         $this->modelTeam = new TeamModel();
         $teams = $this->modelTeam->getAllTeams();
         $jugadoresOrdenados = $this->model->orderBy($filtro);
-        $user = $this->userModel->getUserByEmail($_SESSION['USER_EMAIL']);
-        $this->view->showPlayers($jugadoresOrdenados, $teams,$user);
+        $this->view->showPlayers($jugadoresOrdenados, $teams);
     }
 }

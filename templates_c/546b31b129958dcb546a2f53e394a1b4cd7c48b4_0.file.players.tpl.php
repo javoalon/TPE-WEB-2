@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 22:06:47
+/* Smarty version 4.2.1, created on 2022-10-14 17:29:48
   from 'C:\xampp\htdocs\WEB2\TPE1\templates\players.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63486fd74d4405_83393414',
+  'unifunc' => 'content_6349806cc24cf3_38665358',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '546b31b129958dcb546a2f53e394a1b4cd7c48b4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB2\\TPE1\\templates\\players.tpl',
-      1 => 1665691605,
+      1 => 1665761387,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:form_add.tpl' => 1,
   ),
 ),false)) {
-function content_63486fd74d4405_83393414 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6349806cc24cf3_38665358 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:form_add.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -77,12 +77,12 @@ $_smarty_tpl->tpl_vars['player']->do_else = false;
                         <?php echo $_smarty_tpl->tpl_vars['player']->value->numero;?>
 
                     </td>
-                    <?php if (($_smarty_tpl->tpl_vars['user']->value->rol) == "Admin") {?>
+                    <?php if (($_SESSION['IS_LOGGED']) == true) {?>
                         <td>
                             <a href='editPlayer/<?php echo $_smarty_tpl->tpl_vars['player']->value->id_pk;?>
 ' type='button' class="btn btn-primary btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
-                                    viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path
                                         d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                     <path fill-rule="evenodd"

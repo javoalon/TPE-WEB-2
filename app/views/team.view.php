@@ -5,9 +5,8 @@ class TeamView{
     public function __construct(){
         $this->smarty = new Smarty();
     }
-    function showTeams($teams,$user){
+    function showTeams($teams){
         $this->smarty->assign('teams',$teams);
-        $this->smarty->assign('user',$user);
         $this->smarty->display('teamsList.tpl');
     }
     function showOneTeamPlayers($team){

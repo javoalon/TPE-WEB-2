@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 21:33:46
+/* Smarty version 4.2.1, created on 2022-10-14 17:34:16
   from 'C:\xampp\htdocs\WEB2\TPE1\templates\form_add.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6348681aaeb363_61084877',
+  'unifunc' => 'content_63498178bc7816_08820854',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4894ad76a2173c964aa0ec5050f928c4bf6da1b3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WEB2\\TPE1\\templates\\form_add.tpl',
-      1 => 1665689613,
+      1 => 1665761541,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6348681aaeb363_61084877 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63498178bc7816_08820854 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Agregar jugador a la lista -->
-<?php if (($_smarty_tpl->tpl_vars['user']->value->rol) == "Admin") {?> <!--Si en la base de datos, el rol no es = a "Admin" no muestra el formulario para agregar-->
+<?php if (($_SESSION['IS_LOGGED']) == true) {?> <!--Si la session es iniciada, va a imprimir el formulario-->
     <form class="w-50 p-3" action="add" method="POST">
         <div class="form-group">
             <label for="exampleFormControlInput1">Nombre</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" required placeholder="Kobe Bryant">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="nombre" required
+                placeholder="Kobe Bryant">
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Posicion</label>

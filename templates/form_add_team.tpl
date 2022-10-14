@@ -1,5 +1,5 @@
 <!--Formulario para agregar un equipo-->
-{if ($user->rol)=="Admin"}
+{if ($smarty.session.IS_LOGGED)==true}
     <form action="addTeam" method="POST">
         <div class="form-group">
             <label for="exampleFormControlInput1">Nombre del Equipo</label>
